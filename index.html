@@ -137,6 +137,9 @@
     .playlist {
       margin-top: 20px; width: 100%;
       max-height: 200px; overflow-y: auto;
+      /* Estilização da barra de rolagem para Firefox (adicionado aqui) */
+      scrollbar-width: thin;
+      scrollbar-color: #444 #1c1c1c;
     }
     .playlist-item {
       padding: 10px; border-bottom: 1px solid #444;
@@ -242,6 +245,31 @@
       .control-btn .material-icons { font-size: 24px; }
       .track-title { font-size: 18px; }
     }
+
+    /* === ESTILIZAÇÃO DA BARRA DE ROLAGEM === */
+    /* Para navegadores WebKit (Chrome, Safari, Edge, Opera) */
+    .playlist::-webkit-scrollbar {
+      width: 10px; /* Largura da barra de rolagem */
+    }
+
+    .playlist::-webkit-scrollbar-track {
+      background: #1c1c1c; /* Cor de fundo da trilha */
+      border-radius: 10px; /* Bordas arredondadas para a trilha */
+    }
+
+    .playlist::-webkit-scrollbar-thumb {
+      background-color: #444; /* Cor do "polegar" (a parte que você arrasta) */
+      border-radius: 10px; /* Bordas arredondadas para o polegar */
+      border: 2px solid #1c1c1c; /* Borda na cor da trilha para dar um efeito de espaçamento */
+    }
+
+    .playlist::-webkit-scrollbar-thumb:hover {
+      background-color: #555; /* Cor do polegar ao passar o mouse */
+    }
+    /* OBS: As regras para Firefox (scrollbar-width e scrollbar-color) 
+       foram adicionadas diretamente à classe .playlist acima para melhor organização. */
+    /* === FIM DA ESTILIZAÇÃO DA BARRA DE ROLAGEM === */
+
   </style>
 
   <svg style="display: none;">
